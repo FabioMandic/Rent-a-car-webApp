@@ -1,0 +1,98 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 40px;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: white;
+  margin-left: 20px;
+}
+
+.header .logo img {
+  width: 85px;
+  height: auto;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.locations {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-bottom: 70px;
+  margin-left: 10px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.location img {
+  width: 40px;
+}
+
+.main-text {
+  text-align: right;
+  color: white;
+  margin-bottom: 80px;
+  margin-right: 20px;
+}
+
+.main-text h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.main-text span {
+  color: #e74c3c;
+}
+
+.search-btn {
+  margin-top: 25px;
+  padding: 16px 35px;
+  background-color: #e74c3c;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+}

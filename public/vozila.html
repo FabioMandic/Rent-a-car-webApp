@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vozila - Rent a Car</title>
+  <link rel="stylesheet" href="./styles/vozila.css" />
+  <link rel="stylesheet" href="./styles/dodajvozilo.css" />
+  <script src="./scripts/session.js" defer></script>
+  <script src="./scripts/vozila.js" defer></script>
+  <script src="./scripts/dodajvozilo.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <img src="./images/background-home.png.png" alt="Background" class="background-image" />
+
+    
+    <header class="navbar">
+      <div class="nav-left">
+        <div class="dropdown" id="userDropdown" style="display: none;">
+          <button class="dropbtn" id="welcomeUser">WELCOME, "USERNAME"</button>
+          <div class="dropdown-content" id="dropdown-content"></div>
+        </div>
+        <div class="logo" id="brandLogo">
+          <img src="./images/icon-home.png.png" alt="Car Icon" />
+          <span>RENT A CAR</span>
+        </div>
+      </div>
+
+      <div class="nav-center">
+        <a href="rezervacije.html" id="rezervacijeBtn" class="btn rezervacije-btn" style="display: none;">REZERVACIJE</a>
+        <a href="pocetna.html" class="nav-link">POČETNA</a>
+        <a href="o-nama.html" class="nav-link">O NAMA</a>
+        <a href="lokacije.html" class="nav-link">LOKACIJE</a>
+        <a href="vozila.html" class="nav-link active">VOZILA</a>
+      </div>
+
+      <div class="auth-buttons">
+        <a href="login.html" class="btn login" id="loginBtn">LOGIN</a>
+        <a href="register.html" class="btn register" id="registerBtn">REGISTER</a>
+        <a href="#" class="btn logout" id="logoutBtn" style="display: none;">LOGOUT</a>
+      </div>
+    </header>
+
+    <main class="main-area">
+      <div class="filter-wrapper">
+        <div class="filter-container">
+          <select id="location-filter">
+            <option value="all">Lokacija vozila</option>
+            <option value="Požega">Požega</option>
+            <option value="Đakovo">Đakovo</option>
+            <option value="Osijek">Osijek</option>
+          </select>
+        </div>
+
+        <div class="filter-container">
+          <select id="type-filter">
+            <option value="all">Vrsta vozila</option>
+            <option value="electric">Electric</option>
+            <option value="SUV">SUV</option>
+            <option value="Coupe">Coupe</option>
+            <option value="luxury">Luxury</option>
+          </select>
+        </div>
+
+        <button id="filterBtn">Search 🔍</button>
+      </div>
+
+      <div id="vehicles-container" class="vehicle-list">
+      </div>
+    </main>
+  </div>
+
+  
+  <div id="vehicleModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2 id="modalVehicleName"></h2>
+      <img id="modalVehicleImage" src="" alt="" />
+      <p><strong>Cijena po danu:</strong> <span id="modalPrice"></span> €</p>
+      <p><strong>Lokacija:</strong> <span id="modalLocation"></span></p>
+      <p><strong>Tip vozila:</strong> <span id="modalType"></span></p>
+      <p><strong>Snaga/Raspon:</strong> <span id="modalPowerRange"></span></p>
+      <p><strong>Opis:</strong></p>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
+  
+  <div id="addVehicleModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <h2>Dodaj vozilo</h2>
+      <form id="addVehicleForm" enctype="multipart/form-data">
+        <label for="name">Ime vozila:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="type">Vrsta vozila:</label>
+        <select id="type" name="type" required>
+          <option value="" disabled selected>Odaberi vrstu</option>
+          <option value="electric">electric</option>
+          <option value="SUV">SUV</option>
+          <option value="Coupe">Coupe</option>
+          <option value="luxury">luxury</option>
+        </select>
+
+        <label for="power_range">Snaga motora:</label>
+        <input type="text" id="power_range" name="power_range" />
+
+        <label for="location">Lokacija:</label>
+        <select id="location" name="location" required>
+          <option value="" disabled selected>Odaberi lokaciju</option>
+          <option value="Požega">Požega</option>
+          <option value="Đakovo">Đakovo</option>
+          <option value="Osijek">Osijek</option>
+        </select>
+
+        <label for="price_per_day">Cijena po danu (€):</label>
+        <input type="number" id="price_per_day" name="price_per_day" step="0.01" required />
+
+        <label for="description">Opis:</label>
+        <textarea id="description" name="description"></textarea>
+
+        <label for="image">Slika vozila:</label>
+        <input type="file" id="image" name="image" accept="image/*" required />
+
+        <div class="button-group">
+          <button type="submit">Dodaj vozilo</button>
+          <button type="button" id="closeAddVehicleModal">Zatvori</button>
+        </div>
+      </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

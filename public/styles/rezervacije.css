@@ -1,0 +1,37 @@
+html, body { 
+  height: 100%; 
+}
+body { 
+  overflow-y: 
+  auto !important; 
+}
+
+:root { 
+  --nav-h: 100px; 
+} 
+
+.container { 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+}
+.main-area {
+  height: calc(100vh - var(--nav-h));
+  overflow: hidden;         
+  display: flex;
+  flex-direction: column;
+  min-height: 0;           
+}
+
+.results-header {
+  flex: 0 0 auto;
+}
+
+.results-container {
+  flex: 1 1 auto;
+  min-height: 0;           
+  overflow-y: auto !important;
+  padding-right: 8px;       
+  max-height: unset;       
+}
+
