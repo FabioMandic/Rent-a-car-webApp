@@ -1,0 +1,13 @@
+# Ovisnosti (rekonstruiraju se s: npm install)
+node_modules/
+
+# Tajne i lokalna konfiguracija
+.env
+
+# Logovi
+*.log
+npm-debug.log*
+
+# Sustav
+.DS_Store
+Thumbs.db
